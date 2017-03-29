@@ -25,7 +25,6 @@ public class CoverageTransformer implements ClassFileTransformer {
 			excluded = className.startsWith(exclude) || excluded;
 		}
 		if (className.startsWith(classBase)) {
-			System.out.println(className);
 			ClassReader cr = new ClassReader(classfileBuffer);
 			ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
 			CoverageClassTransformVisitor ca = new CoverageClassTransformVisitor(cw, className);
