@@ -7,7 +7,7 @@ package com.stvv.agent;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunListener;
 
-public class CommonListner extends RunListener {
+public class CommonListener extends RunListener {
 
 	public void testStarted(Description description) {
 
