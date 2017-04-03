@@ -5,18 +5,23 @@ package com.stvv.agent;
  */
 
 import org.junit.runner.Description;
+import org.junit.runner.Result;
 import org.junit.runner.notification.RunListener;
 
 public class CommonListner extends RunListener {
 
 	public void testStarted(Description description) {
 
-		HashsetUtil.writeToFile("[TEST] " + description.getClassName() + ":" + description.getMethodName());
+		HashsetUtil.startClass("[TEST] " + description.getClassName() + ":" + description.getMethodName());
 
 	}
 
 	public void testFinished(Description description) {
 
+		HashsetUtil.addToMap();
+	}
+	
+	public void testRunFinished(Result result) {
 		HashsetUtil.printLines();
 	}
 }
